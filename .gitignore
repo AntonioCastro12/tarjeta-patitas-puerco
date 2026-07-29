@@ -1,0 +1,12 @@
+/node_modules
+/dist/
+/.wrangler/
+/.vinext/
+/outputs/
+/work/
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
