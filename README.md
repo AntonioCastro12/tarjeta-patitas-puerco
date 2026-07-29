@@ -35,7 +35,7 @@ Los datos editables están en `.env`. El archivo se crea copiando `.env.example`
 ```env
 VITE_BUSINESS_NAME=Patitas de Puerco Doña Imelda
 VITE_BUSINESS_DESCRIPTION=Patitas de puerco preparadas con sabor casero
-VITE_SITE_URL=https://patitas-dona-imelda.carnifex9470.chatgpt.site
+VITE_SITE_URL=https://tarjeta-patitas-puerco.netlify.app
 VITE_WHATSAPP_NUMBER=524623361636
 VITE_BUSINESS_PHONE=524623361636
 VITE_BUSINESS_ADDRESS=Rey Alfonso XIII No. 367, Fraccionamiento Los Reyes
