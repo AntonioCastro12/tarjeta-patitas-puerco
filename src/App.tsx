@@ -37,6 +37,7 @@ function App() {
           <BusinessStatus
             isOpen={status.isOpen}
             daysConfigured={status.daysConfigured}
+            serviceDaysLabel={businessConfig.serviceDaysLabel}
           />
 
           <ActionButtons
@@ -55,7 +56,7 @@ function App() {
             <dl>
               <div>
                 <dt><FiClock aria-hidden="true" /> Horario</dt>
-                <dd>2:00 p. m. a 7:00 p. m.</dd>
+                <dd>{businessConfig.serviceDaysLabel}<br />2:00 p. m. a 7:00 p. m.</dd>
               </div>
               <div>
                 <dt><FiPhone aria-hidden="true" /> Teléfono</dt>

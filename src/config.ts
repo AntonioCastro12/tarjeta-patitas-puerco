@@ -21,6 +21,7 @@ export const businessConfig = {
   closeHour: integer("VITE_CLOSE_HOUR", 19),
   timezone: value("VITE_BUSINESS_TIMEZONE", "America/Mexico_City"),
   serviceDays: value("VITE_SERVICE_DAYS"),
+  serviceDaysLabel: value("VITE_SERVICE_DAYS_LABEL", "Lunes a domingo"),
   menuImageUrl: value("VITE_MENU_IMAGE_URL"),
   facebookUrl: value("VITE_FACEBOOK_URL"),
   instagramUrl: value("VITE_INSTAGRAM_URL"),
