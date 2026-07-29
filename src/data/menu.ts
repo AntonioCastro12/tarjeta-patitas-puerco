@@ -26,7 +26,7 @@ export const menuItems: MenuItem[] = [
     id: 3,
     category: "Tostadas",
     name: "Tostada sencilla",
-    description: "Elige entre los ingredientes disponibles.",
+    description: "Elige entre los ingredientes disponibles, se pueden elegir 2 ingredientes.",
     price: 30,
     available: true,
   },
