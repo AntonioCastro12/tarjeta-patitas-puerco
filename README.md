@@ -38,7 +38,7 @@ VITE_BUSINESS_DESCRIPTION=Patitas de puerco preparadas con sabor casero
 VITE_SITE_URL=https://patitas-dona-imelda.carnifex9470.chatgpt.site
 VITE_WHATSAPP_NUMBER=524623361636
 VITE_BUSINESS_PHONE=524623361636
-VITE_BUSINESS_ADDRESS=
+VITE_BUSINESS_ADDRESS=Rey Alfonso XIII No. 367, Fraccionamiento Los Reyes
 VITE_MAPS_URL=https://maps.app.goo.gl/EKk1fCkLX5RE8T4e9
 VITE_DELIVERY_AREA=Irapuato, Guanajuato
 VITE_OPEN_HOUR=14
@@ -97,7 +97,9 @@ Si queda vacío, la tarjeta muestra que los días de servicio están por confirm
 
 ## WhatsApp y QR
 
-El botón y el QR se activan cuando `VITE_WHATSAPP_NUMBER` contiene un número válido. Ambos utilizan el mismo mensaje codificado.
+El botón de WhatsApp se activa cuando `VITE_WHATSAPP_NUMBER` contiene un número válido.
+
+El QR utiliza `VITE_SITE_URL` para abrir directamente esta tarjeta digital.
 
 El botón “Descargar QR” guarda el archivo:
 

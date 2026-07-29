@@ -12,6 +12,10 @@ export const businessConfig = {
     "VITE_BUSINESS_DESCRIPTION",
     "Patitas de puerco preparadas con sabor casero",
   ),
+  siteUrl: value(
+    "VITE_SITE_URL",
+    "https://patitas-dona-imelda.carnifex9470.chatgpt.site",
+  ),
   whatsappNumber: value("VITE_WHATSAPP_NUMBER"),
   phone: value("VITE_BUSINESS_PHONE"),
   address: value("VITE_BUSINESS_ADDRESS"),

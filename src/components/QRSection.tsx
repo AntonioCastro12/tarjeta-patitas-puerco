@@ -22,11 +22,18 @@ export const QRSection = ({ value }: QRSectionProps) => {
 
   return (
     <section className="section-card qr-section" aria-labelledby="qr-title">
-      <p className="eyebrow">Pedido rápido</p>
-      <h2 id="qr-title">Escanea para hacer tu pedido</h2>
+      <p className="eyebrow">Tarjeta digital</p>
+      <h2 id="qr-title">Escanea para abrir esta tarjeta</h2>
       {value ? (
         <>
-          <div className="qr-frame" data-qr-target={value}>
+          <a
+            className="qr-frame"
+            data-qr-target={value}
+            href={value}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir la tarjeta digital en una nueva pestaña"
+          >
             <QRCodeCanvas
               ref={canvasRef}
               value={value}
@@ -35,10 +42,10 @@ export const QRSection = ({ value }: QRSectionProps) => {
               fgColor="#351313"
               level="M"
               marginSize={4}
-              title="Código QR para pedir por WhatsApp"
+              title="Código QR para abrir la tarjeta digital"
             />
-          </div>
-          <p className="qr-help">Abre la cámara de tu celular y apunta al código.</p>
+          </a>
+          <p className="qr-help">Apunta la cámara de tu celular para abrir la tarjeta completa.</p>
           <button className="download-button" type="button" onClick={downloadQr}>
             <FiDownload aria-hidden="true" />
             Descargar QR
@@ -48,7 +55,7 @@ export const QRSection = ({ value }: QRSectionProps) => {
       ) : (
         <div className="empty-state">
           <span aria-hidden="true">QR</span>
-          <p>El código aparecerá cuando configures el número real de WhatsApp.</p>
+          <p>El código aparecerá cuando configures la dirección web de la tarjeta.</p>
         </div>
       )}
     </section>

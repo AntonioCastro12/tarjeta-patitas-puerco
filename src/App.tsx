@@ -76,7 +76,7 @@ function App() {
             </p>
           </section>
 
-          <QRSection value={whatsappUrl} />
+          <QRSection value={businessConfig.siteUrl} />
 
           <SocialLinks
             facebookUrl={businessConfig.facebookUrl}
