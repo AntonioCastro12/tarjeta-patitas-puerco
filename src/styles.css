@@ -42,6 +42,29 @@ body.modal-open {
   overflow: hidden;
 }
 
+.brand-intro {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  padding: 24px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, #fff 0 32%, rgba(252, 224, 219, 0.96) 70%),
+    var(--color-background);
+  animation: intro-screen 5s linear forwards;
+}
+
+.brand-intro__logo {
+  display: block;
+  width: min(82vw, 430px);
+  height: auto;
+  border-radius: 28px;
+  filter: drop-shadow(0 24px 44px rgba(104, 28, 28, 0.16));
+  animation: intro-logo 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -72,7 +95,7 @@ a:focus-visible {
   border-radius: 34px;
   box-shadow: var(--shadow-card);
   transform-origin: center top;
-  animation: card-enter 820ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: card-enter 700ms 4.3s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .business-header {
@@ -821,6 +844,14 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .brand-intro {
+    display: none;
+  }
+
+  .digital-card {
+    animation-delay: 0ms !important;
+  }
+
   *,
   *::before,
   *::after {
@@ -828,6 +859,49 @@ h1 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes intro-screen {
+  0%,
+  78% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@keyframes intro-logo {
+  0% {
+    opacity: 0;
+    filter: blur(10px) drop-shadow(0 24px 44px rgba(104, 28, 28, 0.16));
+    transform: scale(0.72);
+  }
+
+  14%,
+  62% {
+    opacity: 1;
+    filter: blur(0) drop-shadow(0 24px 44px rgba(104, 28, 28, 0.16));
+  }
+
+  62% {
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(8px) drop-shadow(0 30px 56px rgba(104, 28, 28, 0.08));
+    transform: scale(1.28);
   }
 }
 

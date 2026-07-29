@@ -26,76 +26,90 @@ function App() {
   const whatsappUrl = createWhatsAppUrl(businessConfig.whatsappNumber);
 
   return (
-    <main className="page-shell">
-      <article className="digital-card">
-        <BusinessHeader
-          name={businessConfig.name}
-          description={businessConfig.description}
+    <>
+      <div className="brand-intro" aria-hidden="true">
+        <img
+          className="brand-intro__logo"
+          src="/logo-patitas.png"
+          alt=""
+          width="500"
+          height="500"
+          loading="eager"
+          fetchPriority="high"
         />
+      </div>
 
-        <div className="card-content">
-          <BusinessStatus
-            isOpen={status.isOpen}
-            daysConfigured={status.daysConfigured}
-            serviceDaysLabel={businessConfig.serviceDaysLabel}
-          />
-
-          <ActionButtons
-            businessName={businessConfig.name}
+      <main className="page-shell">
+        <article className="digital-card">
+          <BusinessHeader
+            name={businessConfig.name}
             description={businessConfig.description}
-            whatsappUrl={whatsappUrl}
-            isOpen={status.isOpen}
-            phone={businessConfig.phone}
-            mapsUrl={businessConfig.mapsUrl}
-            onOpenMenu={() => setMenuOpen(true)}
           />
 
-          <section className="section-card business-info" aria-labelledby="info-title">
-            <p className="eyebrow">Estamos para servirte</p>
-            <h2 id="info-title">Información del negocio</h2>
-            <dl>
-              <div>
-                <dt><FiClock aria-hidden="true" /> Horario</dt>
-                <dd>{businessConfig.serviceDaysLabel}<br />2:00 p. m. a 7:00 p. m.</dd>
-              </div>
-              <div>
-                <dt><FiPhone aria-hidden="true" /> Teléfono</dt>
-                <dd>{isValidPhoneNumber(businessConfig.phone) ? businessConfig.phone : "Pendiente de configurar"}</dd>
-              </div>
-              <div>
-                <dt><FiMapPin aria-hidden="true" /> Dirección</dt>
-                <dd>{configuredOrPending(businessConfig.address)}</dd>
-              </div>
-              <div>
-                <dt><FiNavigation aria-hidden="true" /> Zona de servicio</dt>
-                <dd>{configuredOrPending(businessConfig.deliveryArea)}</dd>
-              </div>
-            </dl>
-            <p className="delivery-note">
-              Servicio a domicilio sujeto a disponibilidad y cotización de envío.
-            </p>
-          </section>
+          <div className="card-content">
+            <BusinessStatus
+              isOpen={status.isOpen}
+              daysConfigured={status.daysConfigured}
+              serviceDaysLabel={businessConfig.serviceDaysLabel}
+            />
 
-          <QRSection value={businessConfig.siteUrl} />
+            <ActionButtons
+              businessName={businessConfig.name}
+              description={businessConfig.description}
+              whatsappUrl={whatsappUrl}
+              isOpen={status.isOpen}
+              phone={businessConfig.phone}
+              mapsUrl={businessConfig.mapsUrl}
+              onOpenMenu={() => setMenuOpen(true)}
+            />
 
-          <SocialLinks
-            facebookUrl={businessConfig.facebookUrl}
-            instagramUrl={businessConfig.instagramUrl}
-            tiktokUrl={businessConfig.tiktokUrl}
-          />
-        </div>
+            <section className="section-card business-info" aria-labelledby="info-title">
+              <p className="eyebrow">Estamos para servirte</p>
+              <h2 id="info-title">Información del negocio</h2>
+              <dl>
+                <div>
+                  <dt><FiClock aria-hidden="true" /> Horario</dt>
+                  <dd>{businessConfig.serviceDaysLabel}<br />2:00 p. m. a 7:00 p. m.</dd>
+                </div>
+                <div>
+                  <dt><FiPhone aria-hidden="true" /> Teléfono</dt>
+                  <dd>{isValidPhoneNumber(businessConfig.phone) ? businessConfig.phone : "Pendiente de configurar"}</dd>
+                </div>
+                <div>
+                  <dt><FiMapPin aria-hidden="true" /> Dirección</dt>
+                  <dd>{configuredOrPending(businessConfig.address)}</dd>
+                </div>
+                <div>
+                  <dt><FiNavigation aria-hidden="true" /> Zona de servicio</dt>
+                  <dd>{configuredOrPending(businessConfig.deliveryArea)}</dd>
+                </div>
+              </dl>
+              <p className="delivery-note">
+                Servicio a domicilio sujeto a disponibilidad y cotización de envío.
+              </p>
+            </section>
 
-        <Footer />
-      </article>
+            <QRSection value={businessConfig.siteUrl} />
 
-      <MenuModal
-        isOpen={menuOpen}
-        onClose={closeMenu}
-        items={menuItems}
-        ingredients={menuIngredients}
-        menuImageUrl={businessConfig.menuImageUrl}
-      />
-    </main>
+            <SocialLinks
+              facebookUrl={businessConfig.facebookUrl}
+              instagramUrl={businessConfig.instagramUrl}
+              tiktokUrl={businessConfig.tiktokUrl}
+            />
+          </div>
+
+          <Footer />
+        </article>
+
+        <MenuModal
+          isOpen={menuOpen}
+          onClose={closeMenu}
+          items={menuItems}
+          ingredients={menuIngredients}
+          menuImageUrl={businessConfig.menuImageUrl}
+        />
+      </main>
+    </>
   );
 }
 
