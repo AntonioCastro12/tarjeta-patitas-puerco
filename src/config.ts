@@ -16,7 +16,7 @@ export const businessConfig = {
     "VITE_SITE_URL",
     "https://tarjeta-patitas-puerco.netlify.app",
   ),
-  whatsappNumber: value("VITE_WHATSAPP_NUMBER", "4623361636"),
+  whatsappNumber: value("VITE_WHATSAPP_NUMBER", "524623361636"),
   phone: value("VITE_BUSINESS_PHONE", "524623361636"),
   address: value(
     "VITE_BUSINESS_ADDRESS",
