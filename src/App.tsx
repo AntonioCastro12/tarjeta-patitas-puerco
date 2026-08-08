@@ -73,7 +73,7 @@ function App() {
                 </div>
                 <div>
                   <dt><FiPhone aria-hidden="true" /> Teléfono</dt>
-                  <dd>{isValidPhoneNumber(businessConfig.phone) ? businessConfig.phone : "Pendiente de configurar"}</dd>
+                  <dd>{isValidPhoneNumber(businessConfig.phone) ? businessConfig.phone : "462-336-16-36"}</dd>
                 </div>
                 <div>
                   <dt><FiMapPin aria-hidden="true" /> Dirección</dt>
