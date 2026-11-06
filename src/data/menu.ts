@@ -12,14 +12,14 @@ export const menuItems: MenuItem[] = [
     id: 1,
     category: "Órdenes de patita",
     name: "Orden entera de patita",
-    price: 100,
+    price: 110,
     available: true,
   },
   {
     id: 2,
     category: "Órdenes de patita",
     name: "Media orden de patita",
-    price: 60,
+    price: 70,
     available: true,
   },
   {
